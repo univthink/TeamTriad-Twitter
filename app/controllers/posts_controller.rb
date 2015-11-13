@@ -1,6 +1,5 @@
 class PostsController < ApplicationController
   def index
-    render template: "posts/index.html.erb"
   end
   def create
     @post = Post.new(post_params)
@@ -14,11 +13,9 @@ class PostsController < ApplicationController
 
   def new
     @posts = Post.all
-    #if current_user_session
     @post = Post.new
 end
 def edit
-  @posts = Post.all
   @post = Post.find(params[:id])
   @post.save
   render :new
@@ -29,15 +26,12 @@ def update
    if @post.update(post_params)
      redirect_to @post
    else
-     render partial: "post/new", layout: "application"
+     render "new"
    end
-   @post.save
  end
 
 def show
     @posts = Post.find(params[:id])
-    render :index
-    @posts.save
   end
 
   def destroy
