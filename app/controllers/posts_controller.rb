@@ -32,8 +32,6 @@ def update
 
 def show
     @posts = Post.find(params[:id])
-    render :index
-    @posts.save
   end
 
   def destroy
