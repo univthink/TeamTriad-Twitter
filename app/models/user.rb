@@ -1,3 +1,9 @@
 class User < ActiveRecord::Base
+
+  acts_as_authentic
+
+  acts_as_authentic do |c|
+    c.crypto_providers = Authlogic::CryptoProvider::Sha512
+  end
   
 end
