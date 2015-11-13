@@ -3,6 +3,12 @@
 
 <%= form_for @user, html: {class: "form-horizontal"} do |f| %>
   <div class="form-group">
+    <%= f.label :name, class: "col-sm-2 control-label" %>
+    <div class="col-sm-5">
+      <%= f.text_field :name, class: "form-control" %>
+    </div>
+  </div>
+  <div class="form-group">
     <%= f.label :username, class: "col-sm-2 control-label" %>
     <div class="col-sm-5">
       <%= f.text_field :username, class: "form-control" %>
@@ -39,6 +45,6 @@
     </div>
   </div>
   <div class="row">
-  <%= f.submit "Save", class: "center-block btn btn-default"%>
+    <%= f.submit "Save", class: "center-block btn btn-default"%>
   </div>
 <% end %>
