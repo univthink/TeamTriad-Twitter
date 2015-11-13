@@ -16,3 +16,6 @@
 @import "bootstrap";
 @import "bootstrap.min";
 @import "shop-item";
+.success {
+  background-color: green;
+}

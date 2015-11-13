@@ -16,8 +16,16 @@ class PostsController < ApplicationController
     @posts = Post.all
     #if current_user_session
     @post = Post.new
-    render template: "posts/new"
-
-
 end
+def edit
+  @posts = Post.all
+  @posts = Post.find(params[:id])
+  @posts.save
+  render :new
+end
+def show
+    @posts = Post.find(params[:id])
+    render :index
+    @posts.save
+  end
 end

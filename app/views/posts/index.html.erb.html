@@ -59,12 +59,12 @@
 
                                       <div class="post-preview">
                                                 <h3 class="post-body" style="font-weight: normal;">
-                                                  <%=raw sanitize(simple_format(p.blurb), :tags => %w(br p) ) %>
+                                                <p>New Post <%= p.user_id %></p>
                                                 </h3>
-                                                  <%= p.blurb %>
+                                                  <%=raw sanitize(simple_format(p.blurb), :tags => %w(br p em) ) %>
                                                 <p class="post-meta">Posted on <%= p.created_at %></p>
                                             <p class="post-meta">This post has been viewed <a href="#"><%= p.user_id %></a> times.</p>
-
+                                            <%= link_to p.user_id, post_path + "/delete" %>
                                       </div>
                         <% end %>
                     <div class="ratings">
