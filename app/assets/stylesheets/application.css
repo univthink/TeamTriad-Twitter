@@ -18,4 +18,5 @@
 @import "shop-item";
 .success {
   background-color: green;
+  padding-top: 10px;
 }
