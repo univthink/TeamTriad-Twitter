@@ -1,0 +1,13 @@
+
+<div class="thumbnail col-xs-8">
+  <div class="caption-full">
+    <h2><%= @user.name %></h2>
+    <h4>Username: <%= @user.username %></h4>
+    <h4>Bio: </h4>
+    <p><%= @user.bio %></p>
+    <h4>Email: <%= mail_to @user.email %></h4>
+  </div>
+</div>
+<div class="col-xs-4">
+  <%= image_tag(@user.profile_picture) %>
+</div>
