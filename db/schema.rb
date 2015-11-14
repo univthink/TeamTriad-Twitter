@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151113022601) do
+ActiveRecord::Schema.define(version: 20151114055924) do
 
   create_table "posts", force: :cascade do |t|
     t.text     "blurb"
@@ -25,11 +25,13 @@ ActiveRecord::Schema.define(version: 20151113022601) do
     t.string   "username"
     t.text     "bio"
     t.string   "email"
-    t.string   "password"
     t.integer  "posts_ID"
-    t.datetime "created_at",      null: false
-    t.datetime "updated_at",      null: false
+    t.datetime "created_at",        null: false
+    t.datetime "updated_at",        null: false
     t.string   "profile_picture"
+    t.string   "password_salt"
+    t.string   "crypted_password"
+    t.string   "persistence_token"
   end
 
 end

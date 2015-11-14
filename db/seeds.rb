@@ -10,10 +10,11 @@
 
 100.times do
   user = User.new
+  user.name = Faker::Internet.name
   user.username = Faker::Internet.user_name
   user.email = Faker::Internet.email
-  user.password = 'text'
-  #user.password_confirmation = user.password
+  user.password = 'password'
+  user.password_confirmation = user.password
   user.bio = Faker::Lorem.sentence
   user.save
 
