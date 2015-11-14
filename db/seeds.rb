@@ -10,7 +10,7 @@
 
 100.times do
   user = User.new
-  user.name = Faker::Internet.name
+  Faker::Name.name
   user.username = Faker::Internet.user_name
   user.email = Faker::Internet.email
   user.password = 'password'
