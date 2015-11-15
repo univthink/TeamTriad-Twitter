@@ -1,10 +1,11 @@
 class UserSessionsController < ApplicationController
 
+
   def new
     @user_session = UserSession.new
   end
   def index
-    @posts = Post.all
+    @posts = Post.order(:created_at).page(params[:page]).per(50)
   end
   def create
     @user_session = UserSession.new(user_session_params)
