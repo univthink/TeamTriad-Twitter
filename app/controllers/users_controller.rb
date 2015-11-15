@@ -16,12 +16,7 @@ class UsersController < ApplicationController
     @user = User.find(params['id'])
   end
 
-  def follow(userid)
-    user1 = current_user
-    user2 = User.find(userid)
-    user1.follow(user2)
-    redirect_to :back
-  end
+
 
   def create
     @user = User.new(users_params)
