@@ -3,7 +3,8 @@ class UserSessionsController < ApplicationController
   def new
     @user_session = UserSession.new
   end
-
+  def index
+  end
   def create
     @user_session = UserSession.new(user_session_params)
     if @user_session.save
@@ -15,9 +16,9 @@ class UserSessionsController < ApplicationController
   end
 
   def destroy
-    current_user_session.destroy
-    flash[:success] = "Goodbye!"
-    redirect_to root_path
+      current_user_session.destroy
+      flash[:success] = "Goodbye!"
+      redirect_to root_path
   end
 
   private

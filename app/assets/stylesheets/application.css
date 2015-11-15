@@ -24,6 +24,9 @@
 #custom-form {
   width: 500px;
 }
+#custom-form {
+  width: 200px;
+}
 #btn-sign-up {
   margin-left: 10px;
 }
