@@ -49,3 +49,6 @@ nav.navbar.navbar-inverse.navbar-fixed-top {
 .navbar-brand  {
   background: white;
 }
+.navbar-brand:hover {
+    background: white !important;
+}
