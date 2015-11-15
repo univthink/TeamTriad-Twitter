@@ -5,7 +5,11 @@ class UserSessionsController < ApplicationController
     @user_session = UserSession.new
   end
   def index
-    @posts = Post.order(:created_at).page(params[:page]).per(50)
+    if current_user_session
+      @posts = Post.select("posts.*").where("user_id = " + current_user.id.to_s).order(:created_at).page(params[:page]).per(50)
+    else
+      @posts = Post.select("posts.*").order(:created_at).page(params[:page]).per(50)
+    end
   end
   def create
     @user_session = UserSession.new(user_session_params)
