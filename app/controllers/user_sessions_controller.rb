@@ -6,7 +6,11 @@ class UserSessionsController < ApplicationController
   end
   def index
     if current_user_session
-      @posts = Post.select("posts.*").where("user_id = " + current_user.id.to_s).order(:created_at).page(params[:page]).per(50)
+      follower_ids = ""
+      current_user.all_following.each do |f|
+        follower_ids = follower_ids +", "+ f.id.to_s
+      end
+      @posts = Post.select("posts.*").where("user_id IN (" + current_user.id.to_s + follower_ids+")").order(:created_at.to_s + " DESC").page(params[:page]).per(50)
     else
       @posts = Post.select("posts.*").order(:created_at).page(params[:page]).per(50)
     end
