@@ -3,6 +3,7 @@
   <div class="caption-full">
     <h2><%= @user.name %></h2>
     <h4>Username: <%= @user.username %></h4>
+    <!-- <%= link_to "Follow this User", follow_path(id:@user.id) %> -->
     <h4>Bio: </h4>
     <p><%= @user.bio %></p>
     <h4>Email: <%= mail_to @user.email %></h4>
