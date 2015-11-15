@@ -1,4 +1,6 @@
 class UsersController < ApplicationController
+
+
   def index
 
   end
@@ -37,7 +39,6 @@ class UsersController < ApplicationController
       render :new
     end
   end
-
 
   private
 
