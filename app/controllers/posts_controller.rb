@@ -3,6 +3,7 @@ class PostsController < ApplicationController
   end
   def create
     @post = Post.new(post_params)
+    @post.update(user_id: current_user.id)
     if @post.save
       flash[:success] = "Your Post Was a Success!"
       redirect_to root_path

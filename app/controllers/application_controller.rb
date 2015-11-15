@@ -4,11 +4,13 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
 
 
-  def post_params
-    params.require(:post).permit(:user_id, :blurb)
-  end
+
 
   private
+
+  def post_params
+    params.require(:post).permit(:blurb)
+  end
 
   def current_user_session
     return @current_user_session if defined?(@current_user_session)
