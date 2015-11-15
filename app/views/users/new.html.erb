@@ -1,6 +1,6 @@
-<h1>Welcome to Blurb</h1>
+<center><h1>Welcome to Blurb</h1>
 
-
+<div id="custom-form-signup">
 <%= form_for @user, html: {class: "form-horizontal"} do |f| %>
   <div class="form-group">
     <%= f.label :name, class: "col-sm-2 control-label" %>
@@ -39,7 +39,7 @@
     </div>
   </div>
   <div class="form-group">
-    <%= f.label :profile_picture, class: "col-sm-2 control-label" %>
+    <%= f.label "Profile Picture URL", class: "col-sm-2 control-label" %>
     <div class="col-sm-8">
       <%= f.url_field :profile_picture, class: "form-control" %>
     </div>
@@ -48,3 +48,4 @@
     <%= f.submit "Save", class: "center-block btn btn-default"%>
   </div>
 <% end %>
+</div></center>

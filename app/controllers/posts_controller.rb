@@ -3,6 +3,7 @@ class PostsController < ApplicationController
   end
   def create
     @post = Post.new(post_params)
+    @post.update(user_id: current_user.id)
     if @post.save
       flash[:success] = "Your Post Was a Success!"
       redirect_to root_path
@@ -15,11 +16,11 @@ class PostsController < ApplicationController
     @posts = Post.all
     @post = Post.new
 end
-def edit
-  @post = Post.find(params[:id])
-  @post.save
-  render :new
-end
+  def edit
+    @post = Post.find(params[:id])
+    @post.save
+    render :new
+  end
 
 def update
    @post = Post.find(params[:id])
@@ -32,6 +33,7 @@ def update
 
 def show
     @posts = Post.find(params[:id])
+    render "post"
   end
 
   def destroy
