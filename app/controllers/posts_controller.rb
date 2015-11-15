@@ -15,11 +15,11 @@ class PostsController < ApplicationController
     @posts = Post.all
     @post = Post.new
 end
-def edit
-  @post = Post.find(params[:id])
-  @post.save
-  render :new
-end
+  def edit
+    @post = Post.find(params[:id])
+    @post.save
+    render :new
+  end
 
 def update
    @post = Post.find(params[:id])
@@ -32,6 +32,7 @@ def update
 
 def show
     @posts = Post.find(params[:id])
+    render "post"
   end
 
   def destroy

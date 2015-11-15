@@ -7,6 +7,16 @@ Rails.application.routes.draw do
   # You can have the root of your site routed with "root"
   root 'posts#index'
 
+  resources :users, only: [:new, :create]
+
+  resources :user_sessions, only: [:create, :destroy]
+
+  get '/sign_out', to: 'user_sessions#destroy', as: :sign_out
+  get '/sign_in', to: 'user_sessions#new', as: :sign_in
+  get '/users/new', to: 'users#new', as: :register
+
+
+
   # Example of regular route:
   get 'posts/new' => 'posts#new'
 

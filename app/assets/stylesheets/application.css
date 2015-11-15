@@ -21,3 +21,9 @@
   margin-bottom: 20px;
   color: white;
 }
+#custom-form {
+  width: 500px;
+}
+#btn-sign-up {
+  margin-left: 10px;
+}

@@ -57,7 +57,7 @@
 
                                       <div class="post-preview">
                                                 <h3 class="post-body" style="font-weight: normal;">
-                                                <p>Post <%= p.id %></p>
+                                                <a href"<%= root_path + "/posts/#{p.id}" %>"><p>Post <%= p.id %></p></a>
                                                 </h3>
                                                   <%=raw sanitize(simple_format(p.blurb), :tags => %w(br p em) ) %>
                                                 <p class="post-meta">Posted on <%= p.created_at %></p>
