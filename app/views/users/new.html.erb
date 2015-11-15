@@ -1,6 +1,6 @@
-<h1>Welcome to Blurb</h1>
+<center><h1>Welcome to Blurb</h1>
 
-
+<div id="custom-form">
 <%= form_for @user, html: {class: "form-horizontal"} do |f| %>
   <div class="form-group">
     <%= f.label :name, class: "col-sm-2 control-label" %>
@@ -48,3 +48,4 @@
     <%= f.submit "Save", class: "center-block btn btn-default"%>
   </div>
 <% end %>
+</div></center>
