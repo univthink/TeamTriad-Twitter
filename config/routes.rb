@@ -15,6 +15,7 @@ Rails.application.routes.draw do
   get '/sign_in', to: 'user_sessions#new', as: :sign_in
   get '/users/new', to: 'users#new', as: :register
   get '/error', to: 'shared#errors', as: :error
+  get '/follow/:id', to: 'user_sessions#follow', as: :follow
 
 
 
