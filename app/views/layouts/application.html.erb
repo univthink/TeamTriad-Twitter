@@ -69,8 +69,8 @@
     <% if !current_user_session %>
         <center><div id="custom-form-index">
           <div class="page-header"><h1>Sign In</h1></div>
-
-            <%= form_for :user_session, :url => { :action => :create }  do |f| %>
+        <%  @user_session = UserSession.new %>
+        <%= form_for @user_session do |f| %>
           <%#= render 'shared/errors', object: @user_session %>
 
           <div class="form-group">
