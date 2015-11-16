@@ -12,9 +12,7 @@
  *
  *= require_tree .
  *= require_self
- */
-<<<<<<< HEAD
-=======
+*/
 @import "bootstrap";
 @import "bootstrap.min";
 @import "shop-item";
@@ -51,4 +49,3 @@ nav.navbar.navbar-inverse.navbar-fixed-top {
 .navbar-brand  {
   background: white;
 }
->>>>>>> c7049035be3d2852628aabdeebacdaa9ac187f80
